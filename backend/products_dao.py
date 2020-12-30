@@ -4,7 +4,7 @@ def get_all_products(connection):
 
     cursor = connection.cursor()
 
-    query = "SELECT products.product_id, products.name, products.um_id, products.price_per_unit, um.um_name FROM products inner join um on products.um_id=um.um_id"
+    query = ("select products.product_id, products.name, products.um_id, products.price_per_unit, um.um_name FROM products inner join um on products.um_id=um.um_id")
 
     cursor.execute(query)
 
