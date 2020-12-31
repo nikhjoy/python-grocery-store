@@ -32,6 +32,7 @@ def insert_new_product(connection, product):
             "VALUES (%s, %s, %s)")
     data = (product['product_name'], product['um_id'], product['price_per_unit'])
     cursor.execute(query, data)
+    order_id = cursor.lastrowid
     connection.commit()
 
     return cursor.lastrowid
